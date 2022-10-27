@@ -29,6 +29,10 @@ app.use('/api/auth', authRoute)
 app.use('/api/posts', postRoute)
 app.use('/api/comments', commentRoute)
 
+app.get('/',(req,res)=>{
+  res.send('Hello server');
+});
+
 async function start() {
   try {
     await mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.9xrhsy6.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`)
